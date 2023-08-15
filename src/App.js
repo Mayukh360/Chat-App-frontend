@@ -1,9 +1,15 @@
+import { Routes,Route } from "react-router-dom";
 import Authform from "./Component/Authform/Authform";
+import ChatUi from "./Component/Chats/ChatUi";
 
 function App() {
   return (
     <div >
-      <Authform/>
+      
+      <Routes>
+      <Route path="/" element={<Authform/>} />
+      <Route path="/chats" element={<ChatUi/>} />
+      </Routes>
     </div>
   );
 }

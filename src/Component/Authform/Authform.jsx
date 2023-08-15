@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Authform() {
+  const navigate=useNavigate()
   const [isSignup, setIsSignup] = useState(true); // Track whether the form is for signup or login
   const [nameChangeData, setNameChangeData] = useState("");
   const [emailChangeData, setEmailChangeData] = useState("");
@@ -24,12 +26,14 @@ export default function Authform() {
           phonenumber: phoneChangeData,
           password: passwordChangeData,
         });
+        navigate("/chats")
         console.log(response);
       } else {
         const response = await axios.post("http://localhost:3000/login", {
           email: emailChangeData,
           password: passwordChangeData,
         });
+        navigate("/chats")
         console.log(response);
       }
     }
