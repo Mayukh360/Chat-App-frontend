@@ -30,8 +30,14 @@ export default function Authform() {
           phonenumber: phoneChangeData,
           password: passwordChangeData,
         });
+        const { token } = response.data;
+        const { userId } = response.data;
+        localStorage.setItem("userId", userId);
+        localStorage.setItem("token", token);
+
+        dispatch(authActions.islogin(token));
         navigate("/chats");
-        console.log(response);
+        
       } else {
         const response = await axios.post("http://localhost:3000/login", {
           email: emailChangeData,

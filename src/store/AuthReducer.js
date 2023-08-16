@@ -14,21 +14,11 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.isPremium = false;
       localStorage.removeItem("token");
-    //   localStorage.removeItem("userId");
+      localStorage.removeItem("userId");
     //   localStorage.removeItem("isPremium");
     //   localStorage.removeItem('email')
     },
-    // ispremium(state, action) {
-    //   console.log("This is from redux", action.payload)
-    //   if (action.payload == true ) {
-    //     state.isPremium = true;
-    //   } else {
-    //     state.isPremium = false;
-    //   }
-    // },
-    // isToggle(state){
-    // state.darkToggle=!state.darkToggle;
-    // },
+ 
   },
 });
 export const authActions = authSlice.actions;
