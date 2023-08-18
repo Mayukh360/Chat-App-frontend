@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../../store/AuthReducer";
 import axios from "axios";
+import ChatGroups from "./ChatGroups";
 
 export default function ChatUi() {
   const dispatch = useDispatch();
@@ -53,8 +54,10 @@ export default function ChatUi() {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-gray-100">
-      
+    <>
+   
+    <div className="h-screen flex flex-col bg-gray-800">
+       <ChatGroups/>
       <form
         className="p-4 bg-white border-t border-gray-300 flex items-center"
         onSubmit={submithandler}
@@ -74,7 +77,7 @@ export default function ChatUi() {
           Send
         </button>
       </form>
-      <div className="p-4 bg-white border-b border-gray-300">
+      <div className="p-4 bg-green-300 border-b border-gray-300">
         {chatData &&
           chatData.map((item) => (
             <p key={item.id} className="mb-2">
@@ -84,5 +87,6 @@ export default function ChatUi() {
           ))}
       </div>
     </div>
+    </>
   );
 }

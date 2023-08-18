@@ -14,19 +14,29 @@ export default function Navbar() {
     dispatch(authActions.islogout());
     navigate("/");
   };
+  const NaviagteHandler=()=>{
+    navigate("/admingroups")
+  }
 
   return (
-    <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
+    <nav className=" bg-gradient-to-b from-purple-700 to-pink-600 text-white p-4 flex justify-between items-center">
       <div className="flex items-center">
         <div className="text-xl font-semibold">Chat App</div>
       </div>
       <div>
       {isLoggedIn &&  <button
-          className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded"
+          className="bg-gray-600 hover:bg-gray-800 mr-4 px-4 py-2 rounded"
+          onClick={NaviagteHandler}
+        >
+         Admin Groups
+        </button>}
+      {isLoggedIn &&  <button
+          className="bg-green-600 hover:bg-red-600 px-4 py-2 rounded"
           onClick={handleLogout}
         >
           Logout
         </button>}
+      
       </div>
     </nav>
   );
