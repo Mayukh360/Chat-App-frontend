@@ -17,11 +17,14 @@ export default function Navbar() {
   const NaviagteHandler=()=>{
     navigate("/admingroups")
   }
+  const chatnavigate=()=>{
+    navigate("/chats")
+  }
 
   return (
     <nav className=" bg-gradient-to-b from-purple-700 to-pink-600 text-white p-4 flex justify-between items-center">
       <div className="flex items-center">
-        <div className="text-xl font-semibold">Chat App</div>
+        <button className="text-xl font-semibold" onClick={chatnavigate}>Chat App</button>
       </div>
       <div>
       {isLoggedIn &&  <button

@@ -47,12 +47,13 @@ export default function AdminGroups() {
           },
         }
       );
-      console.log(response.data);
+     
 
       // Reset state
       setSelectedGroup(null);
       setSelectedGroupId(null);
       setPhoneNumber("");
+      alert(response.data.message);
     } catch (error) {
       console.error(error);
     }
