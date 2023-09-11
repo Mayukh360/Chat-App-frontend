@@ -20,6 +20,9 @@ export default function Navbar() {
   const chatnavigate=()=>{
     navigate("/chats")
   }
+  const naviagteHandler=()=>{
+    navigate("/allgroups")
+  }
 
   return (
     <nav className=" bg-gradient-to-b from-purple-700 to-pink-600 text-white p-4 flex justify-between items-center">
@@ -32,6 +35,12 @@ export default function Navbar() {
           onClick={NaviagteHandler}
         >
          Admin Groups
+        </button>}
+        {isLoggedIn &&  <button
+          className="bg-purple-600 hover:bg-purple-800 mr-4 px-4 py-2 rounded"
+          onClick={naviagteHandler}
+        >
+          Groups
         </button>}
       {isLoggedIn &&  <button
           className="bg-green-600 hover:bg-red-600 px-4 py-2 rounded"
